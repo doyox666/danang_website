@@ -226,6 +226,8 @@ body {
     box-shadow: 0 10px 40px rgba(0, 255, 65, 0.1);
     overflow: hidden;
     border: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 1200px;
 }
 
 .terminal-header {
@@ -255,6 +257,10 @@ body {
 
 .terminal-body {
     padding: 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .terminal-line {
@@ -347,15 +353,23 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.terminal-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .hero-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .image-frame {
@@ -899,8 +913,14 @@ section {
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    max-width: 800px;
+    box-shadow: 0 10px 40px rgba(0, 255, 65, 0.1);
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.contact-terminal .terminal-body {
+    padding: 2rem;
+    display: block;
 }
 
 .contact-info {
@@ -1082,9 +1102,16 @@ section {
         gap: 2rem;
     }
 
+    .terminal-body {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
     .hero-image-container {
         order: -1;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
+        width: 100%;
     }
 
     .image-frame {
