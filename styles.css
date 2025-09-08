@@ -179,55 +179,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 3rem 3rem;
+    padding: 6rem 2rem 2rem;
     position: relative;
     overflow: hidden;
-}
-
-.terminal-content {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.terminal-text {
-    flex: 1;
-    min-width: 600px;
-}
-
-.terminal-image {
-    flex: 0 0 500px;
-    padding: 1rem;
-}
-
-.terminal-image .image-frame {
-    background: var(--bg-card);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    position: relative;
-}
-
-.terminal-image .image-frame::before {
-    content: 'profile.png';
-    display: block;
-    background: #1a1a1a;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-}
-
-.terminal-image .profile-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    padding: 1rem;
 }
 
 .matrix-bg {
@@ -268,13 +222,12 @@ body {
 
 .terminal-window {
     background: var(--bg-card);
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 255, 65, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 255, 65, 0.1);
     overflow: hidden;
     border: 1px solid var(--border-color);
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .terminal-header {
@@ -304,6 +257,10 @@ body {
 
 .terminal-body {
     padding: 2rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .terminal-line {
@@ -396,15 +353,23 @@ body {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1fr 400px;
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.terminal-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .hero-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .image-frame {
@@ -948,8 +913,14 @@ section {
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    max-width: 800px;
+    box-shadow: 0 10px 40px rgba(0, 255, 65, 0.1);
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.contact-terminal .terminal-body {
+    padding: 2rem;
+    display: block;
 }
 
 .contact-info {
@@ -1131,9 +1102,16 @@ section {
         gap: 2rem;
     }
 
+    .terminal-body {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
     .hero-image-container {
         order: -1;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
+        width: 100%;
     }
 
     .image-frame {
