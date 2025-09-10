@@ -83,9 +83,9 @@ body {
 }
 
 @keyframes loading {
-    0% { content: 'Initializing security protocols...'; }
-    33% { content: 'Loading encryption modules...'; }
-    66% { content: 'Establishing secure connection...'; }
+    0% { content: 'Initializing...'; }
+    33% { content: 'Loading modules...'; }
+    66% { content: 'Securing connection...'; }
     100% { content: 'Access granted.'; }
 }
 
@@ -376,7 +376,53 @@ body {
     position: relative;
     width: 300px;
     height: 300px;
-    padding: 10px;
+    padding: 0;
+}
+
+.ascii-art-container {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.ascii-profile {
+    font-family: var(--font-mono);
+    font-size: 0.42rem;
+    line-height: 1;
+    color: var(--primary-color);
+    margin: 0;
+    white-space: pre;
+    text-shadow: none;
+    animation: none;
+    letter-spacing: -1px;
+    opacity: 1;
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.ascii-glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(0, 255, 65, 0.03) 50%,
+        transparent 100%
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
 .image-border {
